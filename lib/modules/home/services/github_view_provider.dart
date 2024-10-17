@@ -2,6 +2,7 @@
 import 'package:LyvelyExercise/modules/home/data/git_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../configs/api_endpoints.dart';
@@ -9,6 +10,8 @@ import '../../../utils/api_service.dart';
 import '../../../utils/dio_client.dart';
 
 part 'github_view_provider.g.dart';
+
+final formatterProvider = Provider<NumberFormat>((Ref) => NumberFormat.compact(locale: "en_US", explicitSign: false));
 
 final gitApiServiceProvider = Provider<ApiService<GitRepository>>((ref) {
   final dioClient = DioClient(

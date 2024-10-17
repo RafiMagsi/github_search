@@ -11,11 +11,19 @@ part 'github_service.g.dart';
 const int _pageSize = 10;
 
 @riverpod
-class GithubNotifier extends _$GithubNotifier {
-  String _query = 'dart'; // Default search query
-
+class Query extends _$Query {
   @override
-  Future<SearchResult> build(ApiService apiService, {int? page = 1}) {
+  String build() => 'dart';
+  void update(val) => state = val;
+}
+
+@riverpod
+class GithubNotifier extends _$GithubNotifier {
+  @override
+  Future<SearchResult> build(
+    ApiService apiService, {
+    int? page = 1,
+  }) {
     return _fetch();
   }
 
@@ -30,15 +38,15 @@ class GithubNotifier extends _$GithubNotifier {
     headers0['Authorization'] = 'Bearer ${AppSession.accessToken}';
     headers0['Accept-Language'] = 'application/vnd.github+json';
 
-    final response =
-        await apiService.fetchAll(APIEndPoints.searchRepository, query: _query, page: page, limit: _pageSize, headers: headers0);
+    final response = await apiService.fetchAll(APIEndPoints.searchRepository,
+        query: ref.watch(queryProvider), page: page, limit: _pageSize, headers: headers0);
     return response;
   }
 
   // Update the search query and reset pagination
   void updateQuery(String query) {
-    if (_query != query) {
-      _query = query;
+    if (ref.watch(queryProvider) != query) {
+      ref.read(queryProvider.notifier).update(query);
       refresh();
     }
   }
@@ -47,5 +55,14 @@ class GithubNotifier extends _$GithubNotifier {
     state = const AsyncLoading();
     ref.invalidateSelf();
     await future;
+  }
+
+  bookmark(repo) async {
+    var headers0 = <String, String>{};
+    headers0['Authorization'] = 'Bearer ${AppSession.accessToken}';
+    headers0['Accept-Language'] = 'application/vnd.github+json';
+
+    final response = await apiService.update(APIEndPoints.searchRepository, repo.id, headers: headers0, data: repo);
+    return response;
   }
 }

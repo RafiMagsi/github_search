@@ -1,7 +1,9 @@
+import 'package:LyvelyExercise/modules/home/presentation/git_repo_details_view.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../modules/home/data/git_model.dart';
 import '../modules/home/presentation/home_view.dart';
 part 'app_router.gr.dart';
 
@@ -13,5 +15,6 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: HomeRoute.page, initial: true),
+        AutoRoute(page: RepositoryDetailsRoute.page, path: '/repository_details/:repo'),
       ];
 }

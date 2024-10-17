@@ -11,4 +11,6 @@ abstract class AppSizes {
   static const double large_2 = 32;
   static const double large_3 = 36;
   static const double button = 44;
+  static const double icon = 55;
+  static const double icon2 = 77;
 }

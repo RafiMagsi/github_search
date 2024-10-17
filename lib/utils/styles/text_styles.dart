@@ -13,6 +13,17 @@ class AppStyles {
     ];
   }
 
+  // Box Shadow for container
+  static List<BoxShadow> boxShadow2() {
+    return [
+      const BoxShadow(
+        color: Colors.black12,
+        blurRadius: 8,
+        spreadRadius: 8,
+      )
+    ];
+  }
+
   // Input field error text style
   static TextStyle errorTextStyle() {
     return const TextStyle(

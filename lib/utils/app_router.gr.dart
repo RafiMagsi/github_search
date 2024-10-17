@@ -43,3 +43,49 @@ class HomeRouteArgs {
     return 'HomeRouteArgs{key: $key}';
   }
 }
+
+/// generated route for
+/// [RepositoryDetailsView]
+class RepositoryDetailsRoute extends PageRouteInfo<RepositoryDetailsRouteArgs> {
+  RepositoryDetailsRoute({
+    Key? key,
+    required GitRepository repo,
+    List<PageRouteInfo>? children,
+  }) : super(
+          RepositoryDetailsRoute.name,
+          args: RepositoryDetailsRouteArgs(
+            key: key,
+            repo: repo,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'RepositoryDetailsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<RepositoryDetailsRouteArgs>();
+      return RepositoryDetailsView(
+        key: args.key,
+        repo: args.repo,
+      );
+    },
+  );
+}
+
+class RepositoryDetailsRouteArgs {
+  const RepositoryDetailsRouteArgs({
+    this.key,
+    required this.repo,
+  });
+
+  final Key? key;
+
+  final GitRepository repo;
+
+  @override
+  String toString() {
+    return 'RepositoryDetailsRouteArgs{key: $key, repo: $repo}';
+  }
+}

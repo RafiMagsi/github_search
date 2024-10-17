@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:LyvelyExercise/configs/strings.dart';
 import 'package:LyvelyExercise/modules/home/data/git_model.dart';
-import 'package:LyvelyExercise/modules/home/presentation/git_item_widget.dart';
+import 'package:LyvelyExercise/modules/home/presentation/widgets/git_item_widget.dart';
 import 'package:LyvelyExercise/modules/home/services/github_service.dart';
 import 'package:LyvelyExercise/templates/page_template.dart';
 import 'package:auto_route/annotations.dart';
@@ -77,7 +77,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
                 error: (err, stack) =>
                     indexInPage == 0 ? GitItemWidget(repo: GitRepository(name: err.toString())) : const SizedBox.shrink(),
                 loading: () {
-                  return notificationShimmer();
+                  return repositoryShimmer();
                 },
               );
             },
@@ -87,11 +87,11 @@ class _HomeViewState extends ConsumerState<HomeView> {
     );
   }
 
-  Shimmer notificationShimmer() {
+  Shimmer repositoryShimmer() {
     return Shimmer.fromColors(
       baseColor: Colors.grey[300]!,
       highlightColor: Colors.grey[100]!,
-      child: GitItemWidget(repo: GitRepository()),
+      child: SizedBox(height: 200, child: GitItemWidget(repo: GitRepository())),
     );
   }
 }

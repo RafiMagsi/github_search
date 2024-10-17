@@ -21,11 +21,11 @@ class CustomButton extends StatelessWidget {
     return MaterialButton(
       highlightColor: Colors.transparent,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: AppSizes.small_3),
+        padding: const EdgeInsets.symmetric(vertical: AppSizes.small_2),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: enabled! ? AppColors.buttonColor : AppColors.buttonColor.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(AppSizes.large_2),
+          color: enabled! ? AppColors.textSubtitle : AppColors.hintColor.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(AppSizes.small_1),
           boxShadow: AppStyles.boxShadow(),
         ),
         child: Text(

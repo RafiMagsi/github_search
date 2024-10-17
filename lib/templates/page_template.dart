@@ -11,6 +11,8 @@ class PageTemplate extends StatelessWidget {
   final String? pageTitle;
   final bool? rootPage;
   final Widget? titleWidget;
+  final double? footerLeft;
+  final double? footerRight;
 
   const PageTemplate({
     super.key,
@@ -20,6 +22,8 @@ class PageTemplate extends StatelessWidget {
     this.pageTitle = "",
     this.rootPage = false,
     this.titleWidget,
+    this.footerLeft,
+    this.footerRight,
   });
 
   @override
@@ -37,8 +41,8 @@ class PageTemplate extends StatelessWidget {
           ),
           Positioned(
             bottom: AppSizes.large_2,
-            left: 0,
-            right: 0,
+            left: footerLeft ?? null,
+            right: footerRight ?? 0,
             child: footer ?? Container(),
           )
         ],

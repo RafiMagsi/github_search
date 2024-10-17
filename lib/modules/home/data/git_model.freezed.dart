@@ -220,17 +220,18 @@ GitRepository _$GitRepositoryFromJson(Map<String, dynamic> json) {
 mixin _$GitRepository {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  String? get fullName => throw _privateConstructorUsedError;
+  String? get full_name => throw _privateConstructorUsedError;
   Owner? get owner => throw _privateConstructorUsedError;
-  String? get htmlUrl => throw _privateConstructorUsedError;
+  String? get html_url => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   int? get size => throw _privateConstructorUsedError;
-  int? get forksCount => throw _privateConstructorUsedError;
-  int? get openIssuesCount => throw _privateConstructorUsedError;
+  int? get forks_count => throw _privateConstructorUsedError;
+  int? get open_issues_count => throw _privateConstructorUsedError;
   int? get forks => throw _privateConstructorUsedError;
-  int? get openIssues => throw _privateConstructorUsedError;
   int? get score => throw _privateConstructorUsedError;
-  int? get stargazersCount => throw _privateConstructorUsedError;
+  int? get stargazers_count => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+  int? get watchers_count => throw _privateConstructorUsedError;
 
   /// Serializes this GitRepository to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -251,17 +252,18 @@ abstract class $GitRepositoryCopyWith<$Res> {
   $Res call(
       {int? id,
       String? name,
-      String? fullName,
+      String? full_name,
       Owner? owner,
-      String? htmlUrl,
+      String? html_url,
       String? description,
       int? size,
-      int? forksCount,
-      int? openIssuesCount,
+      int? forks_count,
+      int? open_issues_count,
       int? forks,
-      int? openIssues,
       int? score,
-      int? stargazersCount});
+      int? stargazers_count,
+      String? url,
+      int? watchers_count});
 
   $OwnerCopyWith<$Res>? get owner;
 }
@@ -283,17 +285,18 @@ class _$GitRepositoryCopyWithImpl<$Res, $Val extends GitRepository>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? fullName = freezed,
+    Object? full_name = freezed,
     Object? owner = freezed,
-    Object? htmlUrl = freezed,
+    Object? html_url = freezed,
     Object? description = freezed,
     Object? size = freezed,
-    Object? forksCount = freezed,
-    Object? openIssuesCount = freezed,
+    Object? forks_count = freezed,
+    Object? open_issues_count = freezed,
     Object? forks = freezed,
-    Object? openIssues = freezed,
     Object? score = freezed,
-    Object? stargazersCount = freezed,
+    Object? stargazers_count = freezed,
+    Object? url = freezed,
+    Object? watchers_count = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -304,17 +307,17 @@ class _$GitRepositoryCopyWithImpl<$Res, $Val extends GitRepository>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      fullName: freezed == fullName
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      full_name: freezed == full_name
+          ? _value.full_name
+          : full_name // ignore: cast_nullable_to_non_nullable
               as String?,
       owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as Owner?,
-      htmlUrl: freezed == htmlUrl
-          ? _value.htmlUrl
-          : htmlUrl // ignore: cast_nullable_to_non_nullable
+      html_url: freezed == html_url
+          ? _value.html_url
+          : html_url // ignore: cast_nullable_to_non_nullable
               as String?,
       description: freezed == description
           ? _value.description
@@ -324,29 +327,33 @@ class _$GitRepositoryCopyWithImpl<$Res, $Val extends GitRepository>
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int?,
-      forksCount: freezed == forksCount
-          ? _value.forksCount
-          : forksCount // ignore: cast_nullable_to_non_nullable
+      forks_count: freezed == forks_count
+          ? _value.forks_count
+          : forks_count // ignore: cast_nullable_to_non_nullable
               as int?,
-      openIssuesCount: freezed == openIssuesCount
-          ? _value.openIssuesCount
-          : openIssuesCount // ignore: cast_nullable_to_non_nullable
+      open_issues_count: freezed == open_issues_count
+          ? _value.open_issues_count
+          : open_issues_count // ignore: cast_nullable_to_non_nullable
               as int?,
       forks: freezed == forks
           ? _value.forks
           : forks // ignore: cast_nullable_to_non_nullable
               as int?,
-      openIssues: freezed == openIssues
-          ? _value.openIssues
-          : openIssues // ignore: cast_nullable_to_non_nullable
-              as int?,
       score: freezed == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as int?,
-      stargazersCount: freezed == stargazersCount
-          ? _value.stargazersCount
-          : stargazersCount // ignore: cast_nullable_to_non_nullable
+      stargazers_count: freezed == stargazers_count
+          ? _value.stargazers_count
+          : stargazers_count // ignore: cast_nullable_to_non_nullable
+              as int?,
+      url: freezed == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      watchers_count: freezed == watchers_count
+          ? _value.watchers_count
+          : watchers_count // ignore: cast_nullable_to_non_nullable
               as int?,
     ) as $Val);
   }
@@ -377,17 +384,18 @@ abstract class _$$GitRepositoryImplCopyWith<$Res>
   $Res call(
       {int? id,
       String? name,
-      String? fullName,
+      String? full_name,
       Owner? owner,
-      String? htmlUrl,
+      String? html_url,
       String? description,
       int? size,
-      int? forksCount,
-      int? openIssuesCount,
+      int? forks_count,
+      int? open_issues_count,
       int? forks,
-      int? openIssues,
       int? score,
-      int? stargazersCount});
+      int? stargazers_count,
+      String? url,
+      int? watchers_count});
 
   @override
   $OwnerCopyWith<$Res>? get owner;
@@ -408,17 +416,18 @@ class __$$GitRepositoryImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
-    Object? fullName = freezed,
+    Object? full_name = freezed,
     Object? owner = freezed,
-    Object? htmlUrl = freezed,
+    Object? html_url = freezed,
     Object? description = freezed,
     Object? size = freezed,
-    Object? forksCount = freezed,
-    Object? openIssuesCount = freezed,
+    Object? forks_count = freezed,
+    Object? open_issues_count = freezed,
     Object? forks = freezed,
-    Object? openIssues = freezed,
     Object? score = freezed,
-    Object? stargazersCount = freezed,
+    Object? stargazers_count = freezed,
+    Object? url = freezed,
+    Object? watchers_count = freezed,
   }) {
     return _then(_$GitRepositoryImpl(
       id: freezed == id
@@ -429,17 +438,17 @@ class __$$GitRepositoryImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      fullName: freezed == fullName
-          ? _value.fullName
-          : fullName // ignore: cast_nullable_to_non_nullable
+      full_name: freezed == full_name
+          ? _value.full_name
+          : full_name // ignore: cast_nullable_to_non_nullable
               as String?,
       owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as Owner?,
-      htmlUrl: freezed == htmlUrl
-          ? _value.htmlUrl
-          : htmlUrl // ignore: cast_nullable_to_non_nullable
+      html_url: freezed == html_url
+          ? _value.html_url
+          : html_url // ignore: cast_nullable_to_non_nullable
               as String?,
       description: freezed == description
           ? _value.description
@@ -449,29 +458,33 @@ class __$$GitRepositoryImplCopyWithImpl<$Res>
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
               as int?,
-      forksCount: freezed == forksCount
-          ? _value.forksCount
-          : forksCount // ignore: cast_nullable_to_non_nullable
+      forks_count: freezed == forks_count
+          ? _value.forks_count
+          : forks_count // ignore: cast_nullable_to_non_nullable
               as int?,
-      openIssuesCount: freezed == openIssuesCount
-          ? _value.openIssuesCount
-          : openIssuesCount // ignore: cast_nullable_to_non_nullable
+      open_issues_count: freezed == open_issues_count
+          ? _value.open_issues_count
+          : open_issues_count // ignore: cast_nullable_to_non_nullable
               as int?,
       forks: freezed == forks
           ? _value.forks
           : forks // ignore: cast_nullable_to_non_nullable
               as int?,
-      openIssues: freezed == openIssues
-          ? _value.openIssues
-          : openIssues // ignore: cast_nullable_to_non_nullable
-              as int?,
       score: freezed == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as int?,
-      stargazersCount: freezed == stargazersCount
-          ? _value.stargazersCount
-          : stargazersCount // ignore: cast_nullable_to_non_nullable
+      stargazers_count: freezed == stargazers_count
+          ? _value.stargazers_count
+          : stargazers_count // ignore: cast_nullable_to_non_nullable
+              as int?,
+      url: freezed == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      watchers_count: freezed == watchers_count
+          ? _value.watchers_count
+          : watchers_count // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
   }
@@ -483,17 +496,18 @@ class _$GitRepositoryImpl implements _GitRepository {
   _$GitRepositoryImpl(
       {this.id,
       this.name,
-      this.fullName,
+      this.full_name,
       this.owner,
-      this.htmlUrl,
+      this.html_url,
       this.description,
       this.size,
-      this.forksCount,
-      this.openIssuesCount,
+      this.forks_count,
+      this.open_issues_count,
       this.forks,
-      this.openIssues,
       this.score,
-      this.stargazersCount});
+      this.stargazers_count,
+      this.url,
+      this.watchers_count});
 
   factory _$GitRepositoryImpl.fromJson(Map<String, dynamic> json) =>
       _$$GitRepositoryImplFromJson(json);
@@ -503,31 +517,33 @@ class _$GitRepositoryImpl implements _GitRepository {
   @override
   final String? name;
   @override
-  final String? fullName;
+  final String? full_name;
   @override
   final Owner? owner;
   @override
-  final String? htmlUrl;
+  final String? html_url;
   @override
   final String? description;
   @override
   final int? size;
   @override
-  final int? forksCount;
+  final int? forks_count;
   @override
-  final int? openIssuesCount;
+  final int? open_issues_count;
   @override
   final int? forks;
   @override
-  final int? openIssues;
-  @override
   final int? score;
   @override
-  final int? stargazersCount;
+  final int? stargazers_count;
+  @override
+  final String? url;
+  @override
+  final int? watchers_count;
 
   @override
   String toString() {
-    return 'GitRepository(id: $id, name: $name, fullName: $fullName, owner: $owner, htmlUrl: $htmlUrl, description: $description, size: $size, forksCount: $forksCount, openIssuesCount: $openIssuesCount, forks: $forks, openIssues: $openIssues, score: $score, stargazersCount: $stargazersCount)';
+    return 'GitRepository(id: $id, name: $name, full_name: $full_name, owner: $owner, html_url: $html_url, description: $description, size: $size, forks_count: $forks_count, open_issues_count: $open_issues_count, forks: $forks, score: $score, stargazers_count: $stargazers_count, url: $url, watchers_count: $watchers_count)';
   }
 
   @override
@@ -537,23 +553,25 @@ class _$GitRepositoryImpl implements _GitRepository {
             other is _$GitRepositoryImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.fullName, fullName) ||
-                other.fullName == fullName) &&
+            (identical(other.full_name, full_name) ||
+                other.full_name == full_name) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.htmlUrl, htmlUrl) || other.htmlUrl == htmlUrl) &&
+            (identical(other.html_url, html_url) ||
+                other.html_url == html_url) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.size, size) || other.size == size) &&
-            (identical(other.forksCount, forksCount) ||
-                other.forksCount == forksCount) &&
-            (identical(other.openIssuesCount, openIssuesCount) ||
-                other.openIssuesCount == openIssuesCount) &&
+            (identical(other.forks_count, forks_count) ||
+                other.forks_count == forks_count) &&
+            (identical(other.open_issues_count, open_issues_count) ||
+                other.open_issues_count == open_issues_count) &&
             (identical(other.forks, forks) || other.forks == forks) &&
-            (identical(other.openIssues, openIssues) ||
-                other.openIssues == openIssues) &&
             (identical(other.score, score) || other.score == score) &&
-            (identical(other.stargazersCount, stargazersCount) ||
-                other.stargazersCount == stargazersCount));
+            (identical(other.stargazers_count, stargazers_count) ||
+                other.stargazers_count == stargazers_count) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.watchers_count, watchers_count) ||
+                other.watchers_count == watchers_count));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -562,17 +580,18 @@ class _$GitRepositoryImpl implements _GitRepository {
       runtimeType,
       id,
       name,
-      fullName,
+      full_name,
       owner,
-      htmlUrl,
+      html_url,
       description,
       size,
-      forksCount,
-      openIssuesCount,
+      forks_count,
+      open_issues_count,
       forks,
-      openIssues,
       score,
-      stargazersCount);
+      stargazers_count,
+      url,
+      watchers_count);
 
   /// Create a copy of GitRepository
   /// with the given fields replaced by the non-null parameter values.
@@ -594,17 +613,18 @@ abstract class _GitRepository implements GitRepository {
   factory _GitRepository(
       {final int? id,
       final String? name,
-      final String? fullName,
+      final String? full_name,
       final Owner? owner,
-      final String? htmlUrl,
+      final String? html_url,
       final String? description,
       final int? size,
-      final int? forksCount,
-      final int? openIssuesCount,
+      final int? forks_count,
+      final int? open_issues_count,
       final int? forks,
-      final int? openIssues,
       final int? score,
-      final int? stargazersCount}) = _$GitRepositoryImpl;
+      final int? stargazers_count,
+      final String? url,
+      final int? watchers_count}) = _$GitRepositoryImpl;
 
   factory _GitRepository.fromJson(Map<String, dynamic> json) =
       _$GitRepositoryImpl.fromJson;
@@ -614,27 +634,29 @@ abstract class _GitRepository implements GitRepository {
   @override
   String? get name;
   @override
-  String? get fullName;
+  String? get full_name;
   @override
   Owner? get owner;
   @override
-  String? get htmlUrl;
+  String? get html_url;
   @override
   String? get description;
   @override
   int? get size;
   @override
-  int? get forksCount;
+  int? get forks_count;
   @override
-  int? get openIssuesCount;
+  int? get open_issues_count;
   @override
   int? get forks;
   @override
-  int? get openIssues;
-  @override
   int? get score;
   @override
-  int? get stargazersCount;
+  int? get stargazers_count;
+  @override
+  String? get url;
+  @override
+  int? get watchers_count;
 
   /// Create a copy of GitRepository
   /// with the given fields replaced by the non-null parameter values.
@@ -653,20 +675,10 @@ mixin _$Owner {
   String? get login => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
   String? get nodeId => throw _privateConstructorUsedError;
-  String? get avatarUrl => throw _privateConstructorUsedError;
-  String? get gravatarId => throw _privateConstructorUsedError;
+  String? get avatar_url => throw _privateConstructorUsedError;
+  String? get gravatar_id => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
-  String? get htmlUrl => throw _privateConstructorUsedError;
-  String? get followersUrl => throw _privateConstructorUsedError;
-  String? get followingUrl => throw _privateConstructorUsedError;
-  String? get gistsUrl => throw _privateConstructorUsedError;
-  String? get starredUrl => throw _privateConstructorUsedError;
-  String? get subscriptionsUrl => throw _privateConstructorUsedError;
-  String? get organizationsUrl => throw _privateConstructorUsedError;
-  String? get reposUrl => throw _privateConstructorUsedError;
-  String? get eventsUrl => throw _privateConstructorUsedError;
-  String? get receivedEventsUrl => throw _privateConstructorUsedError;
-  bool? get siteAdmin => throw _privateConstructorUsedError;
+  String? get html_url => throw _privateConstructorUsedError;
 
   /// Serializes this Owner to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -686,20 +698,10 @@ abstract class $OwnerCopyWith<$Res> {
       {String? login,
       int? id,
       String? nodeId,
-      String? avatarUrl,
-      String? gravatarId,
+      String? avatar_url,
+      String? gravatar_id,
       String? url,
-      String? htmlUrl,
-      String? followersUrl,
-      String? followingUrl,
-      String? gistsUrl,
-      String? starredUrl,
-      String? subscriptionsUrl,
-      String? organizationsUrl,
-      String? reposUrl,
-      String? eventsUrl,
-      String? receivedEventsUrl,
-      bool? siteAdmin});
+      String? html_url});
 }
 
 /// @nodoc
@@ -720,20 +722,10 @@ class _$OwnerCopyWithImpl<$Res, $Val extends Owner>
     Object? login = freezed,
     Object? id = freezed,
     Object? nodeId = freezed,
-    Object? avatarUrl = freezed,
-    Object? gravatarId = freezed,
+    Object? avatar_url = freezed,
+    Object? gravatar_id = freezed,
     Object? url = freezed,
-    Object? htmlUrl = freezed,
-    Object? followersUrl = freezed,
-    Object? followingUrl = freezed,
-    Object? gistsUrl = freezed,
-    Object? starredUrl = freezed,
-    Object? subscriptionsUrl = freezed,
-    Object? organizationsUrl = freezed,
-    Object? reposUrl = freezed,
-    Object? eventsUrl = freezed,
-    Object? receivedEventsUrl = freezed,
-    Object? siteAdmin = freezed,
+    Object? html_url = freezed,
   }) {
     return _then(_value.copyWith(
       login: freezed == login
@@ -748,62 +740,22 @@ class _$OwnerCopyWithImpl<$Res, $Val extends Owner>
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatarUrl: freezed == avatarUrl
-          ? _value.avatarUrl
-          : avatarUrl // ignore: cast_nullable_to_non_nullable
+      avatar_url: freezed == avatar_url
+          ? _value.avatar_url
+          : avatar_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      gravatarId: freezed == gravatarId
-          ? _value.gravatarId
-          : gravatarId // ignore: cast_nullable_to_non_nullable
+      gravatar_id: freezed == gravatar_id
+          ? _value.gravatar_id
+          : gravatar_id // ignore: cast_nullable_to_non_nullable
               as String?,
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      htmlUrl: freezed == htmlUrl
-          ? _value.htmlUrl
-          : htmlUrl // ignore: cast_nullable_to_non_nullable
+      html_url: freezed == html_url
+          ? _value.html_url
+          : html_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      followersUrl: freezed == followersUrl
-          ? _value.followersUrl
-          : followersUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      followingUrl: freezed == followingUrl
-          ? _value.followingUrl
-          : followingUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gistsUrl: freezed == gistsUrl
-          ? _value.gistsUrl
-          : gistsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      starredUrl: freezed == starredUrl
-          ? _value.starredUrl
-          : starredUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      subscriptionsUrl: freezed == subscriptionsUrl
-          ? _value.subscriptionsUrl
-          : subscriptionsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      organizationsUrl: freezed == organizationsUrl
-          ? _value.organizationsUrl
-          : organizationsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reposUrl: freezed == reposUrl
-          ? _value.reposUrl
-          : reposUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventsUrl: freezed == eventsUrl
-          ? _value.eventsUrl
-          : eventsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receivedEventsUrl: freezed == receivedEventsUrl
-          ? _value.receivedEventsUrl
-          : receivedEventsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      siteAdmin: freezed == siteAdmin
-          ? _value.siteAdmin
-          : siteAdmin // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ) as $Val);
   }
 }
@@ -819,20 +771,10 @@ abstract class _$$OwnerImplCopyWith<$Res> implements $OwnerCopyWith<$Res> {
       {String? login,
       int? id,
       String? nodeId,
-      String? avatarUrl,
-      String? gravatarId,
+      String? avatar_url,
+      String? gravatar_id,
       String? url,
-      String? htmlUrl,
-      String? followersUrl,
-      String? followingUrl,
-      String? gistsUrl,
-      String? starredUrl,
-      String? subscriptionsUrl,
-      String? organizationsUrl,
-      String? reposUrl,
-      String? eventsUrl,
-      String? receivedEventsUrl,
-      bool? siteAdmin});
+      String? html_url});
 }
 
 /// @nodoc
@@ -851,20 +793,10 @@ class __$$OwnerImplCopyWithImpl<$Res>
     Object? login = freezed,
     Object? id = freezed,
     Object? nodeId = freezed,
-    Object? avatarUrl = freezed,
-    Object? gravatarId = freezed,
+    Object? avatar_url = freezed,
+    Object? gravatar_id = freezed,
     Object? url = freezed,
-    Object? htmlUrl = freezed,
-    Object? followersUrl = freezed,
-    Object? followingUrl = freezed,
-    Object? gistsUrl = freezed,
-    Object? starredUrl = freezed,
-    Object? subscriptionsUrl = freezed,
-    Object? organizationsUrl = freezed,
-    Object? reposUrl = freezed,
-    Object? eventsUrl = freezed,
-    Object? receivedEventsUrl = freezed,
-    Object? siteAdmin = freezed,
+    Object? html_url = freezed,
   }) {
     return _then(_$OwnerImpl(
       login: freezed == login
@@ -879,62 +811,22 @@ class __$$OwnerImplCopyWithImpl<$Res>
           ? _value.nodeId
           : nodeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatarUrl: freezed == avatarUrl
-          ? _value.avatarUrl
-          : avatarUrl // ignore: cast_nullable_to_non_nullable
+      avatar_url: freezed == avatar_url
+          ? _value.avatar_url
+          : avatar_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      gravatarId: freezed == gravatarId
-          ? _value.gravatarId
-          : gravatarId // ignore: cast_nullable_to_non_nullable
+      gravatar_id: freezed == gravatar_id
+          ? _value.gravatar_id
+          : gravatar_id // ignore: cast_nullable_to_non_nullable
               as String?,
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      htmlUrl: freezed == htmlUrl
-          ? _value.htmlUrl
-          : htmlUrl // ignore: cast_nullable_to_non_nullable
+      html_url: freezed == html_url
+          ? _value.html_url
+          : html_url // ignore: cast_nullable_to_non_nullable
               as String?,
-      followersUrl: freezed == followersUrl
-          ? _value.followersUrl
-          : followersUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      followingUrl: freezed == followingUrl
-          ? _value.followingUrl
-          : followingUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gistsUrl: freezed == gistsUrl
-          ? _value.gistsUrl
-          : gistsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      starredUrl: freezed == starredUrl
-          ? _value.starredUrl
-          : starredUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      subscriptionsUrl: freezed == subscriptionsUrl
-          ? _value.subscriptionsUrl
-          : subscriptionsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      organizationsUrl: freezed == organizationsUrl
-          ? _value.organizationsUrl
-          : organizationsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reposUrl: freezed == reposUrl
-          ? _value.reposUrl
-          : reposUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventsUrl: freezed == eventsUrl
-          ? _value.eventsUrl
-          : eventsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receivedEventsUrl: freezed == receivedEventsUrl
-          ? _value.receivedEventsUrl
-          : receivedEventsUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      siteAdmin: freezed == siteAdmin
-          ? _value.siteAdmin
-          : siteAdmin // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -946,20 +838,10 @@ class _$OwnerImpl implements _Owner {
       {this.login,
       this.id,
       this.nodeId,
-      this.avatarUrl,
-      this.gravatarId,
+      this.avatar_url,
+      this.gravatar_id,
       this.url,
-      this.htmlUrl,
-      this.followersUrl,
-      this.followingUrl,
-      this.gistsUrl,
-      this.starredUrl,
-      this.subscriptionsUrl,
-      this.organizationsUrl,
-      this.reposUrl,
-      this.eventsUrl,
-      this.receivedEventsUrl,
-      this.siteAdmin});
+      this.html_url});
 
   factory _$OwnerImpl.fromJson(Map<String, dynamic> json) =>
       _$$OwnerImplFromJson(json);
@@ -971,37 +853,17 @@ class _$OwnerImpl implements _Owner {
   @override
   final String? nodeId;
   @override
-  final String? avatarUrl;
+  final String? avatar_url;
   @override
-  final String? gravatarId;
+  final String? gravatar_id;
   @override
   final String? url;
   @override
-  final String? htmlUrl;
-  @override
-  final String? followersUrl;
-  @override
-  final String? followingUrl;
-  @override
-  final String? gistsUrl;
-  @override
-  final String? starredUrl;
-  @override
-  final String? subscriptionsUrl;
-  @override
-  final String? organizationsUrl;
-  @override
-  final String? reposUrl;
-  @override
-  final String? eventsUrl;
-  @override
-  final String? receivedEventsUrl;
-  @override
-  final bool? siteAdmin;
+  final String? html_url;
 
   @override
   String toString() {
-    return 'Owner(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, siteAdmin: $siteAdmin)';
+    return 'Owner(login: $login, id: $id, nodeId: $nodeId, avatar_url: $avatar_url, gravatar_id: $gravatar_id, url: $url, html_url: $html_url)';
   }
 
   @override
@@ -1012,55 +874,19 @@ class _$OwnerImpl implements _Owner {
             (identical(other.login, login) || other.login == login) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.nodeId, nodeId) || other.nodeId == nodeId) &&
-            (identical(other.avatarUrl, avatarUrl) ||
-                other.avatarUrl == avatarUrl) &&
-            (identical(other.gravatarId, gravatarId) ||
-                other.gravatarId == gravatarId) &&
+            (identical(other.avatar_url, avatar_url) ||
+                other.avatar_url == avatar_url) &&
+            (identical(other.gravatar_id, gravatar_id) ||
+                other.gravatar_id == gravatar_id) &&
             (identical(other.url, url) || other.url == url) &&
-            (identical(other.htmlUrl, htmlUrl) || other.htmlUrl == htmlUrl) &&
-            (identical(other.followersUrl, followersUrl) ||
-                other.followersUrl == followersUrl) &&
-            (identical(other.followingUrl, followingUrl) ||
-                other.followingUrl == followingUrl) &&
-            (identical(other.gistsUrl, gistsUrl) ||
-                other.gistsUrl == gistsUrl) &&
-            (identical(other.starredUrl, starredUrl) ||
-                other.starredUrl == starredUrl) &&
-            (identical(other.subscriptionsUrl, subscriptionsUrl) ||
-                other.subscriptionsUrl == subscriptionsUrl) &&
-            (identical(other.organizationsUrl, organizationsUrl) ||
-                other.organizationsUrl == organizationsUrl) &&
-            (identical(other.reposUrl, reposUrl) ||
-                other.reposUrl == reposUrl) &&
-            (identical(other.eventsUrl, eventsUrl) ||
-                other.eventsUrl == eventsUrl) &&
-            (identical(other.receivedEventsUrl, receivedEventsUrl) ||
-                other.receivedEventsUrl == receivedEventsUrl) &&
-            (identical(other.siteAdmin, siteAdmin) ||
-                other.siteAdmin == siteAdmin));
+            (identical(other.html_url, html_url) ||
+                other.html_url == html_url));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      login,
-      id,
-      nodeId,
-      avatarUrl,
-      gravatarId,
-      url,
-      htmlUrl,
-      followersUrl,
-      followingUrl,
-      gistsUrl,
-      starredUrl,
-      subscriptionsUrl,
-      organizationsUrl,
-      reposUrl,
-      eventsUrl,
-      receivedEventsUrl,
-      siteAdmin);
+      runtimeType, login, id, nodeId, avatar_url, gravatar_id, url, html_url);
 
   /// Create a copy of Owner
   /// with the given fields replaced by the non-null parameter values.
@@ -1083,20 +909,10 @@ abstract class _Owner implements Owner {
       {final String? login,
       final int? id,
       final String? nodeId,
-      final String? avatarUrl,
-      final String? gravatarId,
+      final String? avatar_url,
+      final String? gravatar_id,
       final String? url,
-      final String? htmlUrl,
-      final String? followersUrl,
-      final String? followingUrl,
-      final String? gistsUrl,
-      final String? starredUrl,
-      final String? subscriptionsUrl,
-      final String? organizationsUrl,
-      final String? reposUrl,
-      final String? eventsUrl,
-      final String? receivedEventsUrl,
-      final bool? siteAdmin}) = _$OwnerImpl;
+      final String? html_url}) = _$OwnerImpl;
 
   factory _Owner.fromJson(Map<String, dynamic> json) = _$OwnerImpl.fromJson;
 
@@ -1107,33 +923,13 @@ abstract class _Owner implements Owner {
   @override
   String? get nodeId;
   @override
-  String? get avatarUrl;
+  String? get avatar_url;
   @override
-  String? get gravatarId;
+  String? get gravatar_id;
   @override
   String? get url;
   @override
-  String? get htmlUrl;
-  @override
-  String? get followersUrl;
-  @override
-  String? get followingUrl;
-  @override
-  String? get gistsUrl;
-  @override
-  String? get starredUrl;
-  @override
-  String? get subscriptionsUrl;
-  @override
-  String? get organizationsUrl;
-  @override
-  String? get reposUrl;
-  @override
-  String? get eventsUrl;
-  @override
-  String? get receivedEventsUrl;
-  @override
-  bool? get siteAdmin;
+  String? get html_url;
 
   /// Create a copy of Owner
   /// with the given fields replaced by the non-null parameter values.

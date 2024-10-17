@@ -6,7 +6,21 @@ part of 'github_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$githubNotifierHash() => r'eb5519050b0bff6e8ddfa1407b46ea37816ba6e5';
+String _$queryHash() => r'61b38d32470462704188686bb69737f6dce40daa';
+
+/// See also [Query].
+@ProviderFor(Query)
+final queryProvider = AutoDisposeNotifierProvider<Query, String>.internal(
+  Query.new,
+  name: r'queryProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$queryHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$Query = AutoDisposeNotifier<String>;
+String _$githubNotifierHash() => r'e0b1a2919bc43a775001e3c94d5e6309c2798314';
 
 /// Copied from Dart SDK
 class _SystemHash {

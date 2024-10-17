@@ -17,17 +17,18 @@ class GitRepository with _$GitRepository {
   factory GitRepository({
     int? id,
     String? name,
-    String? fullName,
+    String? full_name,
     Owner? owner,
-    String? htmlUrl,
+    String? html_url,
     String? description,
     int? size,
-    int? forksCount,
-    int? openIssuesCount,
+    int? forks_count,
+    int? open_issues_count,
     int? forks,
-    int? openIssues,
     int? score,
-    int? stargazersCount,
+    int? stargazers_count,
+    String? url,
+    int? watchers_count,
   }) = _GitRepository;
 
   factory GitRepository.fromJson(Map<String, dynamic> userJson) => _$GitRepositoryFromJson(userJson);
@@ -39,20 +40,10 @@ class Owner with _$Owner {
     String? login,
     int? id,
     String? nodeId,
-    String? avatarUrl,
-    String? gravatarId,
+    String? avatar_url,
+    String? gravatar_id,
     String? url,
-    String? htmlUrl,
-    String? followersUrl,
-    String? followingUrl,
-    String? gistsUrl,
-    String? starredUrl,
-    String? subscriptionsUrl,
-    String? organizationsUrl,
-    String? reposUrl,
-    String? eventsUrl,
-    String? receivedEventsUrl,
-    bool? siteAdmin,
+    String? html_url,
   }) = _Owner;
   factory Owner.fromJson(Map<String, dynamic> userJson) => _$OwnerFromJson(userJson);
 }
