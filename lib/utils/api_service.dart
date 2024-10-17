@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:dio/src/response.dart';
 
+import '../modules/home/data/git_model.dart';
 import 'dio_client.dart';
 
 class ApiService<T> {
@@ -9,11 +12,11 @@ class ApiService<T> {
   ApiService(this._dioClient, this.fromJson);
 
   // Generic GET request to fetch a list of resources
-  Future<List<T>> fetchAll(String endpoint) async {
+  Future<SearchResult> fetchAll(String endpoint) async {
     try {
       final response = await _dioClient.get(endpoint);
-      final List<dynamic> data = response.data;
-      return data.map((json) => fromJson(json)).toList();
+      final Map<String, dynamic> data = response.data;
+      return SearchResult.fromJson(data);
     } catch (e) {
       throw Exception('Failed to fetch data: $e');
     }
