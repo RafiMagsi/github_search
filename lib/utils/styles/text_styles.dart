@@ -7,9 +7,8 @@ class AppStyles {
   static List<BoxShadow> boxShadow() {
     return [
       const BoxShadow(
-        color: Colors.black12,
-        blurRadius: 4,
-        spreadRadius: 4,
+        color: Colors.black45,
+        spreadRadius: 2,
       )
     ];
   }

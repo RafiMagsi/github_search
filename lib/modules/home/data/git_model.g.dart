@@ -38,6 +38,7 @@ _$GitRepositoryImpl _$$GitRepositoryImplFromJson(Map<String, dynamic> json) =>
       forks: (json['forks'] as num?)?.toInt(),
       openIssues: (json['openIssues'] as num?)?.toInt(),
       score: (json['score'] as num?)?.toInt(),
+      stargazersCount: (json['stargazersCount'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$GitRepositoryImplToJson(_$GitRepositoryImpl instance) =>
@@ -54,6 +55,7 @@ Map<String, dynamic> _$$GitRepositoryImplToJson(_$GitRepositoryImpl instance) =>
       'forks': instance.forks,
       'openIssues': instance.openIssues,
       'score': instance.score,
+      'stargazersCount': instance.stargazersCount,
     };
 
 _$OwnerImpl _$$OwnerImplFromJson(Map<String, dynamic> json) => _$OwnerImpl(

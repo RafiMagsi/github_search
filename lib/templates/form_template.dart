@@ -14,11 +14,11 @@ class FormTemplate extends ConsumerWidget {
   final Widget? submitButton;
 
   const FormTemplate({
-    Key? key,
+    super.key,
     this.formKey,
     this.formFields,
     this.submitButton,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -11,18 +11,10 @@ part of 'app_router.dart';
 
 /// generated route for
 /// [HomeView]
-class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({
-    Key? key,
-    required String title,
-    List<PageRouteInfo>? children,
-  }) : super(
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
           HomeRoute.name,
-          args: HomeRouteArgs(
-            key: key,
-            title: title,
-          ),
-          rawPathParams: {'title': title},
           initialChildren: children,
         );
 
@@ -31,29 +23,7 @@ class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      final pathParams = data.inheritedPathParams;
-      final args = data.argsAs<HomeRouteArgs>(
-          orElse: () => HomeRouteArgs(title: pathParams.getString('title')));
-      return HomeView(
-        key: args.key,
-        title: args.title,
-      );
+      return const HomeView();
     },
   );
-}
-
-class HomeRouteArgs {
-  const HomeRouteArgs({
-    this.key,
-    required this.title,
-  });
-
-  final Key? key;
-
-  final String title;
-
-  @override
-  String toString() {
-    return 'HomeRouteArgs{key: $key, title: $title}';
-  }
 }

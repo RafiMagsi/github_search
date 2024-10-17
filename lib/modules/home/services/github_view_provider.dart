@@ -1,10 +1,14 @@
 // Provider for ApiService that works with User model
 import 'package:LyvelyExercise/modules/home/data/git_model.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../configs/api_endpoints.dart';
 import '../../../utils/api_service.dart';
 import '../../../utils/dio_client.dart';
+
+part 'github_view_provider.g.dart';
 
 final gitApiServiceProvider = Provider<ApiService<GitRepository>>((ref) {
   final dioClient = DioClient(
@@ -13,3 +17,19 @@ final gitApiServiceProvider = Provider<ApiService<GitRepository>>((ref) {
   );
   return ApiService<GitRepository>(dioClient, (json) => GitRepository.fromJson(json));
 });
+
+final TextEditingController searchController = TextEditingController();
+
+@riverpod
+class SearchControllerNotifier extends _$SearchControllerNotifier {
+  SearchControllerNotifier();
+
+  @override
+  String build(TextEditingController messageController) {
+    return '';
+  }
+
+  void updateText(String text) {
+    state = text;
+  }
+}

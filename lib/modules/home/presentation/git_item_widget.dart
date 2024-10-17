@@ -1,7 +1,13 @@
+import 'package:LyvelyExercise/utils/providers/utility_providers.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../configs/colors.dart';
+import '../../../configs/sizes.dart';
 import '../../../utils/app_router.dart';
+import '../../../utils/styles/text_styles.dart';
+import '../../../widgets/placeholder_shimmer.dart';
 import '../data/git_model.dart';
 
 class GitItemWidget extends StatelessWidget {
@@ -18,16 +24,57 @@ class GitItemWidget extends StatelessWidget {
             // ref.context.pushNamed(Routes.repoDetails, extra: repo);
           },
           child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 22),
-            decoration: BoxDecoration(color: Colors.lightBlue[100], borderRadius: const BorderRadius.all(Radius.circular(8))),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+            decoration: BoxDecoration(color: Colors.grey[300], borderRadius: const BorderRadius.all(Radius.circular(8))),
             child: Row(
               children: [
+                SizedBox(
+                  width: 88,
+                  height: 88,
+                  child: ClipRRect(
+                    clipBehavior: Clip.antiAlias,
+                    borderRadius: BorderRadius.circular(AppSizes.small_2),
+                    child: CachedNetworkImage(
+                      imageUrl: repo.owner?.avatarUrl ?? '',
+                      fit: BoxFit.cover,
+                      placeholder: (_, __) => PlaceholderShimmer(),
+                      errorWidget: (context, url, error) => emptyProfile(),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('ID: ${repo.id}'),
-                    Text('Name: ${repo.name}'),
-                    Text('Email: ${repo.htmlUrl}'),
+                    SizedBox(
+                      width: ref.watch(sizeProvider(ref.context)).width * 0.6,
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              'Owner: ${repo.name}',
+                              style: AppStyles.titleStyle(),
+                              maxLines: 10,
+                              softWrap: true,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(Icons.star_border_purple500_sharp, color: AppColors.textColorD),
+                        Text(
+                          (repo.stargazersCount ?? 0).toString(),
+                          style: AppStyles.subTitleStyle(),
+                          softWrap: true,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],
@@ -35,6 +82,20 @@ class GitItemWidget extends StatelessWidget {
           ),
         );
       }),
+    );
+  }
+
+  Container emptyProfile() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(AppSizes.small_3),
+      ),
+      child: Icon(
+        Icons.person,
+        size: 34,
+        color: AppColors.subText,
+      ),
     );
   }
 }

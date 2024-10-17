@@ -6,7 +6,7 @@ part of 'github_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$githubNotifierHash() => r'a38cf4b39afb556ea5ba81777be7adc65d11ade0';
+String _$githubNotifierHash() => r'7399e9c328aa3aa48abebfd6ff5ddb96c8b4a3fd';
 
 /// Copied from Dart SDK
 class _SystemHash {

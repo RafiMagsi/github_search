@@ -13,8 +13,8 @@ class GithubNotifier extends _$GithubNotifier {
     return _fetch();
   }
 
-  // USER PUBLIC METHODS
-  Future<SearchResult> getUserList() async {
+  // REPO PUBLIC METHODS
+  Future<SearchResult> getRepoList() async {
     return _fetch();
   }
 

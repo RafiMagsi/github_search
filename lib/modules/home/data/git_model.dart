@@ -27,6 +27,7 @@ class GitRepository with _$GitRepository {
     int? forks,
     int? openIssues,
     int? score,
+    int? stargazersCount,
   }) = _GitRepository;
 
   factory GitRepository.fromJson(Map<String, dynamic> userJson) => _$GitRepositoryFromJson(userJson);

@@ -230,6 +230,7 @@ mixin _$GitRepository {
   int? get forks => throw _privateConstructorUsedError;
   int? get openIssues => throw _privateConstructorUsedError;
   int? get score => throw _privateConstructorUsedError;
+  int? get stargazersCount => throw _privateConstructorUsedError;
 
   /// Serializes this GitRepository to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -259,7 +260,8 @@ abstract class $GitRepositoryCopyWith<$Res> {
       int? openIssuesCount,
       int? forks,
       int? openIssues,
-      int? score});
+      int? score,
+      int? stargazersCount});
 
   $OwnerCopyWith<$Res>? get owner;
 }
@@ -291,6 +293,7 @@ class _$GitRepositoryCopyWithImpl<$Res, $Val extends GitRepository>
     Object? forks = freezed,
     Object? openIssues = freezed,
     Object? score = freezed,
+    Object? stargazersCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -341,6 +344,10 @@ class _$GitRepositoryCopyWithImpl<$Res, $Val extends GitRepository>
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as int?,
+      stargazersCount: freezed == stargazersCount
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -379,7 +386,8 @@ abstract class _$$GitRepositoryImplCopyWith<$Res>
       int? openIssuesCount,
       int? forks,
       int? openIssues,
-      int? score});
+      int? score,
+      int? stargazersCount});
 
   @override
   $OwnerCopyWith<$Res>? get owner;
@@ -410,6 +418,7 @@ class __$$GitRepositoryImplCopyWithImpl<$Res>
     Object? forks = freezed,
     Object? openIssues = freezed,
     Object? score = freezed,
+    Object? stargazersCount = freezed,
   }) {
     return _then(_$GitRepositoryImpl(
       id: freezed == id
@@ -460,6 +469,10 @@ class __$$GitRepositoryImplCopyWithImpl<$Res>
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as int?,
+      stargazersCount: freezed == stargazersCount
+          ? _value.stargazersCount
+          : stargazersCount // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -479,7 +492,8 @@ class _$GitRepositoryImpl implements _GitRepository {
       this.openIssuesCount,
       this.forks,
       this.openIssues,
-      this.score});
+      this.score,
+      this.stargazersCount});
 
   factory _$GitRepositoryImpl.fromJson(Map<String, dynamic> json) =>
       _$$GitRepositoryImplFromJson(json);
@@ -508,10 +522,12 @@ class _$GitRepositoryImpl implements _GitRepository {
   final int? openIssues;
   @override
   final int? score;
+  @override
+  final int? stargazersCount;
 
   @override
   String toString() {
-    return 'GitRepository(id: $id, name: $name, fullName: $fullName, owner: $owner, htmlUrl: $htmlUrl, description: $description, size: $size, forksCount: $forksCount, openIssuesCount: $openIssuesCount, forks: $forks, openIssues: $openIssues, score: $score)';
+    return 'GitRepository(id: $id, name: $name, fullName: $fullName, owner: $owner, htmlUrl: $htmlUrl, description: $description, size: $size, forksCount: $forksCount, openIssuesCount: $openIssuesCount, forks: $forks, openIssues: $openIssues, score: $score, stargazersCount: $stargazersCount)';
   }
 
   @override
@@ -535,7 +551,9 @@ class _$GitRepositoryImpl implements _GitRepository {
             (identical(other.forks, forks) || other.forks == forks) &&
             (identical(other.openIssues, openIssues) ||
                 other.openIssues == openIssues) &&
-            (identical(other.score, score) || other.score == score));
+            (identical(other.score, score) || other.score == score) &&
+            (identical(other.stargazersCount, stargazersCount) ||
+                other.stargazersCount == stargazersCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -553,7 +571,8 @@ class _$GitRepositoryImpl implements _GitRepository {
       openIssuesCount,
       forks,
       openIssues,
-      score);
+      score,
+      stargazersCount);
 
   /// Create a copy of GitRepository
   /// with the given fields replaced by the non-null parameter values.
@@ -584,7 +603,8 @@ abstract class _GitRepository implements GitRepository {
       final int? openIssuesCount,
       final int? forks,
       final int? openIssues,
-      final int? score}) = _$GitRepositoryImpl;
+      final int? score,
+      final int? stargazersCount}) = _$GitRepositoryImpl;
 
   factory _GitRepository.fromJson(Map<String, dynamic> json) =
       _$GitRepositoryImpl.fromJson;
@@ -613,6 +633,8 @@ abstract class _GitRepository implements GitRepository {
   int? get openIssues;
   @override
   int? get score;
+  @override
+  int? get stargazersCount;
 
   /// Create a copy of GitRepository
   /// with the given fields replaced by the non-null parameter values.

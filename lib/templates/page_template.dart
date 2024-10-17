@@ -10,14 +10,26 @@ class PageTemplate extends StatelessWidget {
   final Widget? footer;
   final String? pageTitle;
   final bool? rootPage;
+  final Widget? titleWidget;
 
-  const PageTemplate({Key? key, this.body, this.header, this.footer, this.pageTitle = "", this.rootPage = false})
-      : super(key: key);
+  const PageTemplate({
+    super.key,
+    this.body,
+    this.header,
+    this.footer,
+    this.pageTitle = "",
+    this.rootPage = false,
+    this.titleWidget,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: pageTitle, rootPage: rootPage),
+      appBar: CustomAppBar(
+        title: pageTitle,
+        rootPage: rootPage,
+        titleWidget: titleWidget,
+      ),
       body: Stack(
         children: [
           Column(

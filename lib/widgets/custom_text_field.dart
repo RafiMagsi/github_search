@@ -47,6 +47,7 @@ class CustomTextField extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(AppSizes.small_3),
       decoration: BoxDecoration(
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(AppSizes.small_3),
         boxShadow: AppStyles.boxShadow(),
       ),
@@ -82,6 +83,7 @@ class CustomTextField extends StatelessWidget {
         textInputAction: TextInputAction.next,
         focusNode: focusNode,
         onFieldSubmitted: onSubmitted,
+        style: AppStyles.titleStyle(color: Colors.white),
       ),
     );
   }

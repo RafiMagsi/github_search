@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title; // Title of the AppBar
   final bool? rootPage; // For checking if its root page then don't show back button
-  const CustomAppBar({Key? key, this.title, this.rootPage = false}) : super(key: key);
+  final Widget? titleWidget;
+  const CustomAppBar({Key? key, this.title, this.rootPage = false, this.titleWidget}) : super(key: key);
 
   @override
   Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height); // Default size of AppBar
@@ -21,8 +22,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   onPressed: () => Navigator.of(context).pop(),
                 )
-              : const SizedBox(),
-          title: Text(title ?? ""),
+              : null,
+          title: titleWidget ?? Text(title ?? ""),
           centerTitle: true,
           automaticallyImplyLeading: false,
           titleSpacing: 0,
