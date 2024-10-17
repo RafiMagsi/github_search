@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
+import 'package:dio/src/cancel_token.dart';
 import 'package:dio/src/response.dart';
 
 import '../modules/home/data/git_model.dart';
@@ -12,9 +14,25 @@ class ApiService<T> {
   ApiService(this._dioClient, this.fromJson);
 
   // Generic GET request to fetch a list of resources
-  Future<SearchResult> fetchAll(String endpoint) async {
+  Future<SearchResult> fetchAll(
+    String endpoint, {
+    int? page,
+    int? limit,
+    CancelToken? cancelToken,
+    String? query,
+    Map<String, dynamic>? headers,
+  }) async {
     try {
-      final response = await _dioClient.get(endpoint);
+      final response = await _dioClient.get(endpoint,
+          queryParameters: {
+            'q': '$query language:dart', // Search for repositories matching the query in Dart
+            'sort': 'stars',
+            'order': 'desc',
+            'page': page,
+            'per_page': limit,
+          },
+          options: Options(headers: headers),
+          cancelToken: cancelToken);
       final Map<String, dynamic> data = response.data;
       return SearchResult.fromJson(data);
     } catch (e) {

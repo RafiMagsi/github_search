@@ -28,8 +28,4 @@ class SearchControllerNotifier extends _$SearchControllerNotifier {
   String build(TextEditingController messageController) {
     return '';
   }
-
-  void updateText(String text) {
-    state = text;
-  }
 }

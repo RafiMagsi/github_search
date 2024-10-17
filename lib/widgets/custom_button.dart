@@ -10,11 +10,11 @@ class CustomButton extends StatelessWidget {
   final Function? onTap;
   final bool? enabled;
   const CustomButton({
-    Key? key,
+    super.key,
     this.title = "",
     this.onTap,
     this.enabled = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

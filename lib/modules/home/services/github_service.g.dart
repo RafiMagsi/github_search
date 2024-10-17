@@ -6,7 +6,7 @@ part of 'github_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$githubNotifierHash() => r'7399e9c328aa3aa48abebfd6ff5ddb96c8b4a3fd';
+String _$githubNotifierHash() => r'eb5519050b0bff6e8ddfa1407b46ea37816ba6e5';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -32,10 +32,12 @@ class _SystemHash {
 abstract class _$GithubNotifier
     extends BuildlessAutoDisposeAsyncNotifier<SearchResult> {
   late final ApiService<dynamic> apiService;
+  late final int? page;
 
   FutureOr<SearchResult> build(
-    ApiService<dynamic> apiService,
-  );
+    ApiService<dynamic> apiService, {
+    int? page = 1,
+  });
 }
 
 /// See also [GithubNotifier].
@@ -49,10 +51,12 @@ class GithubNotifierFamily extends Family<AsyncValue<SearchResult>> {
 
   /// See also [GithubNotifier].
   GithubNotifierProvider call(
-    ApiService<dynamic> apiService,
-  ) {
+    ApiService<dynamic> apiService, {
+    int? page = 1,
+  }) {
     return GithubNotifierProvider(
       apiService,
+      page: page,
     );
   }
 
@@ -62,6 +66,7 @@ class GithubNotifierFamily extends Family<AsyncValue<SearchResult>> {
   ) {
     return call(
       provider.apiService,
+      page: provider.page,
     );
   }
 
@@ -85,9 +90,12 @@ class GithubNotifierProvider
     extends AutoDisposeAsyncNotifierProviderImpl<GithubNotifier, SearchResult> {
   /// See also [GithubNotifier].
   GithubNotifierProvider(
-    ApiService<dynamic> apiService,
-  ) : this._internal(
-          () => GithubNotifier()..apiService = apiService,
+    ApiService<dynamic> apiService, {
+    int? page = 1,
+  }) : this._internal(
+          () => GithubNotifier()
+            ..apiService = apiService
+            ..page = page,
           from: githubNotifierProvider,
           name: r'githubNotifierProvider',
           debugGetCreateSourceHash:
@@ -98,6 +106,7 @@ class GithubNotifierProvider
           allTransitiveDependencies:
               GithubNotifierFamily._allTransitiveDependencies,
           apiService: apiService,
+          page: page,
         );
 
   GithubNotifierProvider._internal(
@@ -108,9 +117,11 @@ class GithubNotifierProvider
     required super.debugGetCreateSourceHash,
     required super.from,
     required this.apiService,
+    required this.page,
   }) : super.internal();
 
   final ApiService<dynamic> apiService;
+  final int? page;
 
   @override
   FutureOr<SearchResult> runNotifierBuild(
@@ -118,6 +129,7 @@ class GithubNotifierProvider
   ) {
     return notifier.build(
       apiService,
+      page: page,
     );
   }
 
@@ -126,13 +138,16 @@ class GithubNotifierProvider
     return ProviderOverride(
       origin: this,
       override: GithubNotifierProvider._internal(
-        () => create()..apiService = apiService,
+        () => create()
+          ..apiService = apiService
+          ..page = page,
         from: from,
         name: null,
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
         apiService: apiService,
+        page: page,
       ),
     );
   }
@@ -145,13 +160,16 @@ class GithubNotifierProvider
 
   @override
   bool operator ==(Object other) {
-    return other is GithubNotifierProvider && other.apiService == apiService;
+    return other is GithubNotifierProvider &&
+        other.apiService == apiService &&
+        other.page == page;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
     hash = _SystemHash.combine(hash, apiService.hashCode);
+    hash = _SystemHash.combine(hash, page.hashCode);
 
     return _SystemHash.finish(hash);
   }
@@ -160,6 +178,9 @@ class GithubNotifierProvider
 mixin GithubNotifierRef on AutoDisposeAsyncNotifierProviderRef<SearchResult> {
   /// The parameter `apiService` of this provider.
   ApiService<dynamic> get apiService;
+
+  /// The parameter `page` of this provider.
+  int? get page;
 }
 
 class _GithubNotifierProviderElement
@@ -170,6 +191,8 @@ class _GithubNotifierProviderElement
   @override
   ApiService<dynamic> get apiService =>
       (origin as GithubNotifierProvider).apiService;
+  @override
+  int? get page => (origin as GithubNotifierProvider).page;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

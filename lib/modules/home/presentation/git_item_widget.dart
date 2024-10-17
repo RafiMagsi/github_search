@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../configs/colors.dart';
 import '../../../configs/sizes.dart';
-import '../../../utils/app_router.dart';
 import '../../../utils/styles/text_styles.dart';
 import '../../../widgets/placeholder_shimmer.dart';
 import '../data/git_model.dart';

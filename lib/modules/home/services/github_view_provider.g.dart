@@ -7,7 +7,7 @@ part of 'github_view_provider.dart';
 // **************************************************************************
 
 String _$searchControllerNotifierHash() =>
-    r'e0b6c346ba8c956df086970c518c9d20c97339a9';
+    r'534eb3e2a6f443df7e296f216502d7c07d8fa5ef';
 
 /// Copied from Dart SDK
 class _SystemHash {

@@ -16,9 +16,15 @@ class DioClient {
     String endpoint, {
     Map<String, dynamic>? queryParameters,
     Options? options,
+    CancelToken? cancelToken,
   }) async {
     try {
-      return await _dio.get(_dio.options.baseUrl + endpoint, queryParameters: queryParameters, options: options);
+      return await _dio.get(
+        _dio.options.baseUrl + endpoint,
+        queryParameters: queryParameters,
+        options: options,
+        cancelToken: cancelToken,
+      );
     } on DioException catch (e) {
       throw handleError(e);
     }
