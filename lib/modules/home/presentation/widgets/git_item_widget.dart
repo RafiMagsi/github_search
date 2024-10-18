@@ -1,4 +1,3 @@
-import 'package:LyvelyExercise/modules/home/presentation/git_repo_details_view.dart';
 import 'package:LyvelyExercise/utils/app_router.dart';
 import 'package:LyvelyExercise/utils/providers/utility_providers.dart';
 import 'package:auto_route/auto_route.dart';

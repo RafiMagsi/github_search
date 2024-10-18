@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:LyvelyExercise/modules/home/presentation/widgets/git_item_widget.dart';
 import 'package:LyvelyExercise/utils/api_service.dart';
 import 'package:flutter/material.dart';

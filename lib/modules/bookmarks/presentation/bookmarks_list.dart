@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:LyvelyExercise/modules/bookmarks/services/bookmarks_view_model.dart';
 import 'package:LyvelyExercise/modules/home/data/git_model.dart';
 import 'package:LyvelyExercise/modules/home/presentation/widgets/git_item_widget.dart';

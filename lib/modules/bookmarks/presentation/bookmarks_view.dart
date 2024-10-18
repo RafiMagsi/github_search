@@ -2,8 +2,6 @@ import 'package:LyvelyExercise/modules/bookmarks/presentation/bookmarks_list.dar
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../services/bookmarks_view_model.dart';
-
 class BookmarksView extends ConsumerWidget {
   const BookmarksView({super.key});
 

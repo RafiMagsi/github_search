@@ -2,24 +2,15 @@ import 'package:LyvelyExercise/modules/home/data/git_model.dart';
 import 'package:LyvelyExercise/modules/home/presentation/widgets/counter_widget.dart';
 import 'package:LyvelyExercise/modules/home/presentation/widgets/repo_info.dart';
 import 'package:LyvelyExercise/modules/home/presentation/widgets/repo_owner_info.dart';
-import 'package:LyvelyExercise/modules/home/services/github_service.dart';
 import 'package:LyvelyExercise/modules/home/services/github_view_provider.dart';
-import 'package:LyvelyExercise/widgets/empty_profile.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:LyvelyExercise/utils/extensions/string_extension.dart';
 
 import '../../../Templates/page_template.dart';
-import '../../../Widgets/custom_button.dart';
-import '../../../configs/sizes.dart';
-import '../../../utils/app_router.dart';
-import '../../../utils/providers/utility_providers.dart';
-import '../../../utils/styles/text_styles.dart';
-import '../../../widgets/placeholder_shimmer.dart';
 
 @RoutePage()
 class RepositoryDetailsView extends ConsumerWidget {
