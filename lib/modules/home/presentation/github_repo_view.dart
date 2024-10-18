@@ -43,12 +43,13 @@ class _HomeViewState extends ConsumerState<GitHubRepoView> {
                 return null;
               },
             )
-          : SizedBox(),
+          : Text('Bookmarks'),
       rootPage: true,
       pageTitle: AppStrings.appName,
       body: tabs(ref, indexBottomNavbar, apiService),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
+          searchController.text = '';
           ref.read(indexBottomNavbarProvider.notifier).update((state) => value);
         },
         currentIndex: indexBottomNavbar,

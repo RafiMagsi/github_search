@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../widgets/app_shammers.dart';
-import '../data/git_model.dart';
 import '../services/github_service.dart';
 
 const int pageSize = 10;
@@ -28,8 +27,6 @@ class RepoListView extends ConsumerWidget {
               final indexInPage = index % pageSize;
               final repositories = ref.watch(githubNotifierProvider(apiService, page: page));
 
-              log('index: $index, page: $page, indexInPage: $indexInPage');
-
               return repositories.when(
                 data: (repoList) {
                   if (indexInPage >= repoList.items.length) {
@@ -37,8 +34,7 @@ class RepoListView extends ConsumerWidget {
                   }
                   return GitItemWidget(repo: repoList.items.elementAt(indexInPage));
                 },
-                error: (err, stack) =>
-                    indexInPage == 0 ? GitItemWidget(repo: GitRepository(name: err.toString())) : const SizedBox.shrink(),
+                error: (err, stack) => Center(child: Text(err.toString())),
                 loading: () {
                   return AppShimmers.repositoryShimmer();
                 },

@@ -6,7 +6,7 @@ part of 'github_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$queryHash() => r'61b38d32470462704188686bb69737f6dce40daa';
+String _$queryHash() => r'b7b545950304652d2c7073fe8ac411a7fbfea69e';
 
 /// See also [Query].
 @ProviderFor(Query)

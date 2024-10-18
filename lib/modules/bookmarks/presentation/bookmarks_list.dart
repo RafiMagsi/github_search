@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:LyvelyExercise/modules/bookmarks/services/bookmarks_view_model.dart';
 import 'package:LyvelyExercise/modules/home/data/git_model.dart';
 import 'package:LyvelyExercise/modules/home/presentation/widgets/git_item_widget.dart';
-import 'package:LyvelyExercise/utils/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

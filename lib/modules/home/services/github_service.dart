@@ -13,7 +13,7 @@ const int _pageSize = 10;
 @riverpod
 class Query extends _$Query {
   @override
-  String build() => 'dart';
+  String build() => '';
   void update(val) => state = val;
 }
 

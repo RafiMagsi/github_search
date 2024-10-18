@@ -27,8 +27,10 @@ class GitItemWidget extends StatelessWidget {
       child: Consumer(builder: (context, ref, widget) {
         return InkWell(
           onTap: () {
+            if (repo.name != null) {
+              context.router.push(RepositoryDetailsRoute(repo: repo));
+            }
             // ref.context.pushNamed(Routes.repoDetails, extra: repo);
-            context.router.push(RepositoryDetailsRoute(repo: repo));
           },
           child: Stack(
             alignment: AlignmentDirectional.bottomCenter,
