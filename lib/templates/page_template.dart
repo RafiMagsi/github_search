@@ -6,17 +6,18 @@ import '../widgets/custom_app_bar.dart';
 // Generic page template
 class PageTemplate extends StatelessWidget {
   final Widget? header;
-  final Widget? body;
+  final Widget body;
   final Widget? footer;
   final String? pageTitle;
   final bool? rootPage;
   final Widget? titleWidget;
   final double? footerLeft;
   final double? footerRight;
+  final BottomNavigationBar? bottomNavigationBar;
 
   const PageTemplate({
     super.key,
-    this.body,
+    required this.body,
     this.header,
     this.footer,
     this.pageTitle = "",
@@ -24,6 +25,7 @@ class PageTemplate extends StatelessWidget {
     this.titleWidget,
     this.footerLeft,
     this.footerRight,
+    this.bottomNavigationBar,
   });
 
   @override
@@ -37,16 +39,17 @@ class PageTemplate extends StatelessWidget {
       body: Stack(
         children: [
           Column(
-            children: [header ?? Container(), Expanded(child: body!)],
+            children: [header ?? Container(), Expanded(child: body)],
           ),
           Positioned(
             bottom: AppSizes.large_2,
-            left: footerLeft ?? null,
+            left: footerLeft,
             right: footerRight ?? 0,
             child: footer ?? Container(),
           )
         ],
       ),
+      bottomNavigationBar: bottomNavigationBar,
     );
   }
 }

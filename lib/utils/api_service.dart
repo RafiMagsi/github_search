@@ -61,10 +61,10 @@ class ApiService<T> {
   }
 
   // Generic PUT request to update an existing resource
-  Future<T> update(String endpoint, String id, {required Map<String, dynamic> data, Map<String, String>? headers}) async {
+  Future<T> update(String endpoint, {Map<String, dynamic>? data, Map<String, String>? headers}) async {
     try {
       final response = await _dioClient.put(
-        '$endpoint/$id',
+        '$endpoint',
         data: data,
         options: Options(headers: headers),
       );

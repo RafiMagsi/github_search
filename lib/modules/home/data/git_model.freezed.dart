@@ -218,20 +218,36 @@ GitRepository _$GitRepositoryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GitRepository {
+  @HiveField(0)
   int? get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   String? get name => throw _privateConstructorUsedError;
+  @HiveField(2)
   String? get full_name => throw _privateConstructorUsedError;
+  @HiveField(3)
   Owner? get owner => throw _privateConstructorUsedError;
+  @HiveField(4)
   String? get html_url => throw _privateConstructorUsedError;
+  @HiveField(5)
   String? get description => throw _privateConstructorUsedError;
+  @HiveField(6)
   int? get size => throw _privateConstructorUsedError;
+  @HiveField(7)
   int? get forks_count => throw _privateConstructorUsedError;
+  @HiveField(8)
   int? get open_issues_count => throw _privateConstructorUsedError;
+  @HiveField(9)
   int? get forks => throw _privateConstructorUsedError;
+  @HiveField(10)
   int? get score => throw _privateConstructorUsedError;
+  @HiveField(11)
   int? get stargazers_count => throw _privateConstructorUsedError;
+  @HiveField(12)
   String? get url => throw _privateConstructorUsedError;
+  @HiveField(13)
   int? get watchers_count => throw _privateConstructorUsedError;
+  @HiveField(14)
+  bool get bookmarked => throw _privateConstructorUsedError;
 
   /// Serializes this GitRepository to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -250,20 +266,21 @@ abstract class $GitRepositoryCopyWith<$Res> {
       _$GitRepositoryCopyWithImpl<$Res, GitRepository>;
   @useResult
   $Res call(
-      {int? id,
-      String? name,
-      String? full_name,
-      Owner? owner,
-      String? html_url,
-      String? description,
-      int? size,
-      int? forks_count,
-      int? open_issues_count,
-      int? forks,
-      int? score,
-      int? stargazers_count,
-      String? url,
-      int? watchers_count});
+      {@HiveField(0) int? id,
+      @HiveField(1) String? name,
+      @HiveField(2) String? full_name,
+      @HiveField(3) Owner? owner,
+      @HiveField(4) String? html_url,
+      @HiveField(5) String? description,
+      @HiveField(6) int? size,
+      @HiveField(7) int? forks_count,
+      @HiveField(8) int? open_issues_count,
+      @HiveField(9) int? forks,
+      @HiveField(10) int? score,
+      @HiveField(11) int? stargazers_count,
+      @HiveField(12) String? url,
+      @HiveField(13) int? watchers_count,
+      @HiveField(14) bool bookmarked});
 
   $OwnerCopyWith<$Res>? get owner;
 }
@@ -297,6 +314,7 @@ class _$GitRepositoryCopyWithImpl<$Res, $Val extends GitRepository>
     Object? stargazers_count = freezed,
     Object? url = freezed,
     Object? watchers_count = freezed,
+    Object? bookmarked = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -355,6 +373,10 @@ class _$GitRepositoryCopyWithImpl<$Res, $Val extends GitRepository>
           ? _value.watchers_count
           : watchers_count // ignore: cast_nullable_to_non_nullable
               as int?,
+      bookmarked: null == bookmarked
+          ? _value.bookmarked
+          : bookmarked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -382,20 +404,21 @@ abstract class _$$GitRepositoryImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? id,
-      String? name,
-      String? full_name,
-      Owner? owner,
-      String? html_url,
-      String? description,
-      int? size,
-      int? forks_count,
-      int? open_issues_count,
-      int? forks,
-      int? score,
-      int? stargazers_count,
-      String? url,
-      int? watchers_count});
+      {@HiveField(0) int? id,
+      @HiveField(1) String? name,
+      @HiveField(2) String? full_name,
+      @HiveField(3) Owner? owner,
+      @HiveField(4) String? html_url,
+      @HiveField(5) String? description,
+      @HiveField(6) int? size,
+      @HiveField(7) int? forks_count,
+      @HiveField(8) int? open_issues_count,
+      @HiveField(9) int? forks,
+      @HiveField(10) int? score,
+      @HiveField(11) int? stargazers_count,
+      @HiveField(12) String? url,
+      @HiveField(13) int? watchers_count,
+      @HiveField(14) bool bookmarked});
 
   @override
   $OwnerCopyWith<$Res>? get owner;
@@ -428,6 +451,7 @@ class __$$GitRepositoryImplCopyWithImpl<$Res>
     Object? stargazers_count = freezed,
     Object? url = freezed,
     Object? watchers_count = freezed,
+    Object? bookmarked = null,
   }) {
     return _then(_$GitRepositoryImpl(
       id: freezed == id
@@ -486,64 +510,88 @@ class __$$GitRepositoryImplCopyWithImpl<$Res>
           ? _value.watchers_count
           : watchers_count // ignore: cast_nullable_to_non_nullable
               as int?,
+      bookmarked: null == bookmarked
+          ? _value.bookmarked
+          : bookmarked // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 0)
 class _$GitRepositoryImpl implements _GitRepository {
   _$GitRepositoryImpl(
-      {this.id,
-      this.name,
-      this.full_name,
-      this.owner,
-      this.html_url,
-      this.description,
-      this.size,
-      this.forks_count,
-      this.open_issues_count,
-      this.forks,
-      this.score,
-      this.stargazers_count,
-      this.url,
-      this.watchers_count});
+      {@HiveField(0) this.id,
+      @HiveField(1) this.name,
+      @HiveField(2) this.full_name,
+      @HiveField(3) this.owner,
+      @HiveField(4) this.html_url,
+      @HiveField(5) this.description,
+      @HiveField(6) this.size,
+      @HiveField(7) this.forks_count,
+      @HiveField(8) this.open_issues_count,
+      @HiveField(9) this.forks,
+      @HiveField(10) this.score,
+      @HiveField(11) this.stargazers_count,
+      @HiveField(12) this.url,
+      @HiveField(13) this.watchers_count,
+      @HiveField(14) this.bookmarked = false});
 
   factory _$GitRepositoryImpl.fromJson(Map<String, dynamic> json) =>
       _$$GitRepositoryImplFromJson(json);
 
   @override
+  @HiveField(0)
   final int? id;
   @override
+  @HiveField(1)
   final String? name;
   @override
+  @HiveField(2)
   final String? full_name;
   @override
+  @HiveField(3)
   final Owner? owner;
   @override
+  @HiveField(4)
   final String? html_url;
   @override
+  @HiveField(5)
   final String? description;
   @override
+  @HiveField(6)
   final int? size;
   @override
+  @HiveField(7)
   final int? forks_count;
   @override
+  @HiveField(8)
   final int? open_issues_count;
   @override
+  @HiveField(9)
   final int? forks;
   @override
+  @HiveField(10)
   final int? score;
   @override
+  @HiveField(11)
   final int? stargazers_count;
   @override
+  @HiveField(12)
   final String? url;
   @override
+  @HiveField(13)
   final int? watchers_count;
+  @override
+  @JsonKey()
+  @HiveField(14)
+  final bool bookmarked;
 
   @override
   String toString() {
-    return 'GitRepository(id: $id, name: $name, full_name: $full_name, owner: $owner, html_url: $html_url, description: $description, size: $size, forks_count: $forks_count, open_issues_count: $open_issues_count, forks: $forks, score: $score, stargazers_count: $stargazers_count, url: $url, watchers_count: $watchers_count)';
+    return 'GitRepository(id: $id, name: $name, full_name: $full_name, owner: $owner, html_url: $html_url, description: $description, size: $size, forks_count: $forks_count, open_issues_count: $open_issues_count, forks: $forks, score: $score, stargazers_count: $stargazers_count, url: $url, watchers_count: $watchers_count, bookmarked: $bookmarked)';
   }
 
   @override
@@ -571,7 +619,9 @@ class _$GitRepositoryImpl implements _GitRepository {
                 other.stargazers_count == stargazers_count) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.watchers_count, watchers_count) ||
-                other.watchers_count == watchers_count));
+                other.watchers_count == watchers_count) &&
+            (identical(other.bookmarked, bookmarked) ||
+                other.bookmarked == bookmarked));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -591,7 +641,8 @@ class _$GitRepositoryImpl implements _GitRepository {
       score,
       stargazers_count,
       url,
-      watchers_count);
+      watchers_count,
+      bookmarked);
 
   /// Create a copy of GitRepository
   /// with the given fields replaced by the non-null parameter values.
@@ -611,52 +662,70 @@ class _$GitRepositoryImpl implements _GitRepository {
 
 abstract class _GitRepository implements GitRepository {
   factory _GitRepository(
-      {final int? id,
-      final String? name,
-      final String? full_name,
-      final Owner? owner,
-      final String? html_url,
-      final String? description,
-      final int? size,
-      final int? forks_count,
-      final int? open_issues_count,
-      final int? forks,
-      final int? score,
-      final int? stargazers_count,
-      final String? url,
-      final int? watchers_count}) = _$GitRepositoryImpl;
+      {@HiveField(0) final int? id,
+      @HiveField(1) final String? name,
+      @HiveField(2) final String? full_name,
+      @HiveField(3) final Owner? owner,
+      @HiveField(4) final String? html_url,
+      @HiveField(5) final String? description,
+      @HiveField(6) final int? size,
+      @HiveField(7) final int? forks_count,
+      @HiveField(8) final int? open_issues_count,
+      @HiveField(9) final int? forks,
+      @HiveField(10) final int? score,
+      @HiveField(11) final int? stargazers_count,
+      @HiveField(12) final String? url,
+      @HiveField(13) final int? watchers_count,
+      @HiveField(14) final bool bookmarked}) = _$GitRepositoryImpl;
 
   factory _GitRepository.fromJson(Map<String, dynamic> json) =
       _$GitRepositoryImpl.fromJson;
 
   @override
+  @HiveField(0)
   int? get id;
   @override
+  @HiveField(1)
   String? get name;
   @override
+  @HiveField(2)
   String? get full_name;
   @override
+  @HiveField(3)
   Owner? get owner;
   @override
+  @HiveField(4)
   String? get html_url;
   @override
+  @HiveField(5)
   String? get description;
   @override
+  @HiveField(6)
   int? get size;
   @override
+  @HiveField(7)
   int? get forks_count;
   @override
+  @HiveField(8)
   int? get open_issues_count;
   @override
+  @HiveField(9)
   int? get forks;
   @override
+  @HiveField(10)
   int? get score;
   @override
+  @HiveField(11)
   int? get stargazers_count;
   @override
+  @HiveField(12)
   String? get url;
   @override
+  @HiveField(13)
   int? get watchers_count;
+  @override
+  @HiveField(14)
+  bool get bookmarked;
 
   /// Create a copy of GitRepository
   /// with the given fields replaced by the non-null parameter values.
@@ -672,12 +741,19 @@ Owner _$OwnerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Owner {
+  @HiveField(0)
   String? get login => throw _privateConstructorUsedError;
+  @HiveField(1)
   int? get id => throw _privateConstructorUsedError;
+  @HiveField(2)
   String? get nodeId => throw _privateConstructorUsedError;
+  @HiveField(3)
   String? get avatar_url => throw _privateConstructorUsedError;
+  @HiveField(4)
   String? get gravatar_id => throw _privateConstructorUsedError;
+  @HiveField(5)
   String? get url => throw _privateConstructorUsedError;
+  @HiveField(6)
   String? get html_url => throw _privateConstructorUsedError;
 
   /// Serializes this Owner to a JSON map.
@@ -695,13 +771,13 @@ abstract class $OwnerCopyWith<$Res> {
       _$OwnerCopyWithImpl<$Res, Owner>;
   @useResult
   $Res call(
-      {String? login,
-      int? id,
-      String? nodeId,
-      String? avatar_url,
-      String? gravatar_id,
-      String? url,
-      String? html_url});
+      {@HiveField(0) String? login,
+      @HiveField(1) int? id,
+      @HiveField(2) String? nodeId,
+      @HiveField(3) String? avatar_url,
+      @HiveField(4) String? gravatar_id,
+      @HiveField(5) String? url,
+      @HiveField(6) String? html_url});
 }
 
 /// @nodoc
@@ -768,13 +844,13 @@ abstract class _$$OwnerImplCopyWith<$Res> implements $OwnerCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? login,
-      int? id,
-      String? nodeId,
-      String? avatar_url,
-      String? gravatar_id,
-      String? url,
-      String? html_url});
+      {@HiveField(0) String? login,
+      @HiveField(1) int? id,
+      @HiveField(2) String? nodeId,
+      @HiveField(3) String? avatar_url,
+      @HiveField(4) String? gravatar_id,
+      @HiveField(5) String? url,
+      @HiveField(6) String? html_url});
 }
 
 /// @nodoc
@@ -833,32 +909,40 @@ class __$$OwnerImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@HiveType(typeId: 1)
 class _$OwnerImpl implements _Owner {
   _$OwnerImpl(
-      {this.login,
-      this.id,
-      this.nodeId,
-      this.avatar_url,
-      this.gravatar_id,
-      this.url,
-      this.html_url});
+      {@HiveField(0) this.login,
+      @HiveField(1) this.id,
+      @HiveField(2) this.nodeId,
+      @HiveField(3) this.avatar_url,
+      @HiveField(4) this.gravatar_id,
+      @HiveField(5) this.url,
+      @HiveField(6) this.html_url});
 
   factory _$OwnerImpl.fromJson(Map<String, dynamic> json) =>
       _$$OwnerImplFromJson(json);
 
   @override
+  @HiveField(0)
   final String? login;
   @override
+  @HiveField(1)
   final int? id;
   @override
+  @HiveField(2)
   final String? nodeId;
   @override
+  @HiveField(3)
   final String? avatar_url;
   @override
+  @HiveField(4)
   final String? gravatar_id;
   @override
+  @HiveField(5)
   final String? url;
   @override
+  @HiveField(6)
   final String? html_url;
 
   @override
@@ -906,29 +990,36 @@ class _$OwnerImpl implements _Owner {
 
 abstract class _Owner implements Owner {
   factory _Owner(
-      {final String? login,
-      final int? id,
-      final String? nodeId,
-      final String? avatar_url,
-      final String? gravatar_id,
-      final String? url,
-      final String? html_url}) = _$OwnerImpl;
+      {@HiveField(0) final String? login,
+      @HiveField(1) final int? id,
+      @HiveField(2) final String? nodeId,
+      @HiveField(3) final String? avatar_url,
+      @HiveField(4) final String? gravatar_id,
+      @HiveField(5) final String? url,
+      @HiveField(6) final String? html_url}) = _$OwnerImpl;
 
   factory _Owner.fromJson(Map<String, dynamic> json) = _$OwnerImpl.fromJson;
 
   @override
+  @HiveField(0)
   String? get login;
   @override
+  @HiveField(1)
   int? get id;
   @override
+  @HiveField(2)
   String? get nodeId;
   @override
+  @HiveField(3)
   String? get avatar_url;
   @override
+  @HiveField(4)
   String? get gravatar_id;
   @override
+  @HiveField(5)
   String? get url;
   @override
+  @HiveField(6)
   String? get html_url;
 
   /// Create a copy of Owner

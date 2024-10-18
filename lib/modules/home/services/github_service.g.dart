@@ -20,7 +20,7 @@ final queryProvider = AutoDisposeNotifierProvider<Query, String>.internal(
 );
 
 typedef _$Query = AutoDisposeNotifier<String>;
-String _$githubNotifierHash() => r'e0b1a2919bc43a775001e3c94d5e6309c2798314';
+String _$githubNotifierHash() => r'a8b1288fd1233670f78e666c02b46c0b2e2678cf';
 
 /// Copied from Dart SDK
 class _SystemHash {

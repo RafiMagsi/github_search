@@ -13,6 +13,10 @@ part 'github_view_provider.g.dart';
 
 final formatterProvider = Provider<NumberFormat>((Ref) => NumberFormat.compact(locale: "en_US", explicitSign: false));
 
+final indexBottomNavbarProvider = StateProvider<int>((ref) {
+  return 0;
+});
+
 final gitApiServiceProvider = Provider<ApiService<GitRepository>>((ref) {
   final dioClient = DioClient(
     baseUrl: APIEndPoints.baseUrl,

@@ -10,38 +10,22 @@
 part of 'app_router.dart';
 
 /// generated route for
-/// [HomeView]
-class HomeRoute extends PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-          HomeRoute.name,
-          args: HomeRouteArgs(key: key),
+/// [GitHubRepoView]
+class GitHubRepoRoute extends PageRouteInfo<void> {
+  const GitHubRepoRoute({List<PageRouteInfo>? children})
+      : super(
+          GitHubRepoRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'GitHubRepoRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      final args =
-          data.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
-      return HomeView(key: args.key);
+      return const GitHubRepoView();
     },
   );
-}
-
-class HomeRouteArgs {
-  const HomeRouteArgs({this.key});
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'HomeRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

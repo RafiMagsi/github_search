@@ -1,10 +1,23 @@
 import 'package:LyvelyExercise/configs/strings.dart';
+import 'package:LyvelyExercise/modules/home/data/git_model.dart';
 import 'package:LyvelyExercise/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'modules/home/presentation/home_view.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Hive
+  await Hive.initFlutter();
+
+  // Register the Hive adapter for the Repository model
+  Hive.registerAdapter(GitRepositoryImplAdapter());
+  Hive.registerAdapter(OwnerImplAdapter());
+
+  // Open the box where the repositories will be stored
+  await Hive.openBox<GitRepository>('repositories');
+
   // Adding ProviderScope enables Riverpod for the entire project
   runApp(ProviderScope(child: MyApp()));
 }

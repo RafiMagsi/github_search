@@ -36,7 +36,7 @@ class GithubNotifier extends _$GithubNotifier {
   Future<SearchResult> _fetch() async {
     var headers0 = <String, String>{};
     headers0['Authorization'] = 'Bearer ${AppSession.accessToken}';
-    headers0['Accept-Language'] = 'application/vnd.github+json';
+    headers0['Accept'] = 'application/vnd.github+json';
 
     final response = await apiService.fetchAll(APIEndPoints.searchRepository,
         query: ref.watch(queryProvider), page: page, limit: _pageSize, headers: headers0);
@@ -57,12 +57,7 @@ class GithubNotifier extends _$GithubNotifier {
     await future;
   }
 
-  bookmark(repo) async {
+  bookmark(GitRepository repo) async {
     var headers0 = <String, String>{};
-    headers0['Authorization'] = 'Bearer ${AppSession.accessToken}';
-    headers0['Accept-Language'] = 'application/vnd.github+json';
-
-    final response = await apiService.update(APIEndPoints.searchRepository, repo.id, headers: headers0, data: repo);
-    return response;
   }
 }
